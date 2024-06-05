@@ -16,17 +16,21 @@
       };
     },
     methods: {
+      // 이벤가 발생했을 때 실행될 함수
       deposit() {
         let amt = parseInt(this.amount);
+
         if (amt <= 0) {
           alert('0보다 큰 값을 입금해주세요');
         } else {
           this.balance += amt;
           this.amount = 0;
+          //amount에 값을 입력하고 초기값을 0으로 맞춤
         }
       },
       withdraw() {
         let amt = parseInt(this.amount);
+        //parseInt : 문자열을 숫자로 변환. 인수가 2개면 parseInt(문자열or숫자, X진법)
         if (amt <= 0) {
           alert('0보다 큰 값을 인출해주세요');
         } else if (amt > this.balance) {

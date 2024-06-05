@@ -1,11 +1,17 @@
 <div id="app">
   금액: <input type="text" v-model.number="amount" /> <br />
+  <!-- input으로 "금액"이라는 텍스트타입을 만들고 15줄 문장의 값을 v-model.number => 숫자형으로 변환시키는 것이다. -->
   <button v-on:click="balance += parseInt(amount)">입금</button>
+  <!-- 클릭이벤트로 더하기를 할 수 있게함. -->
   <button v-on:click="balance -= parseInt(amount)">인출</button>
+  <!-- 클릭이벤트로 빼기를 할 수 있게함. -->
   <br />
+  <!-- 줄바꿈 -->
   <h3>계좌 잔고: {{balance}}</h3>
+  <!-- h3으로 계좌잔고 : 결과값이 나오게 함. -->
 </div>
 <script src="https://unpkg.com/vue"></script>
+<!-- 남의 코드 가져오기. -->
 <script>
   let vm = Vue.createApp({
     name: 'App',
